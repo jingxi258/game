@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="email=no"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+        <title>摇太阳</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/server.css" />
+        <script src="/static/js/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="tip">
+            <h3>本页面支持2位玩家同时扫描并进入游戏房间进行PK</h3>
+            <p>用户扫描二维码后输入自己的游戏昵称，如果不输入会显示为“匿名”;</p>
+            <p>在所有玩家都进入游戏房间后操作才会有效 ;</p>
+        </div>
+        <div class="main">
+            <div class="qr-code">
+                <!--动态生成网址-->
+                {{{data}}}
+            </div>
+            <!--进度条容器-->
+            <div class="progress-wrapper" id="wrapper">
+                <!--
+                <div class="part">
+                    <div class="nick"></div>
+                    <div class="progress">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <div class="award" id="award">
+            <span id="nick-name"></span> 获得胜利！
+        </div>
+        <input value='{{{room_id}}}' style="width:0;height:0;visibility:hidden;" id="room_id"/>
+        <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/static/js/server.js"></script>
+    </body>
+</html>
